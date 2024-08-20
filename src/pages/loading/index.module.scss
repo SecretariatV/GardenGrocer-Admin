@@ -1,2 +1,83 @@
+@use "@styles/mixin" as *;
+@use "@styles/reset" as *;
+@use "@styles/variables" as *;
+
 .root {
+  background-color: $loading-bg-color;
+  @include fullPage;
+  @include itemCenter;
+  transform: translateY(0);
+
+  &.anim {
+    animation: flashAnim 1s linear forwards;
+    position: absolute;
+  }
+
+  &_wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+
+    span {
+      font-family: "Arimo", sans-serif;
+      font-weight: 700;
+      color: $loading-bubble-color;
+      font-size: 50px;
+      text-shadow: 0 2px 1px #277d25, 0 3px 4px #061205, 0 -2px 1px #5abe81;
+    }
+  }
+}
+
+.bubbles {
+  position: relative;
+  width: 12rem;
+  aspect-ratio: 1/1;
+  filter: url("#goo") drop-shadow(0 -2px 1px #277d25);
+
+  & > * {
+    display: block;
+    position: absolute;
+    width: 30px;
+    aspect-ratio: 1/1;
+    margin: -15px;
+    top: 50%;
+    left: 50%;
+  }
+
+  &_bubble {
+    border-radius: 100%;
+    background-color: $loading-bubble-color;
+
+    @for $i from 1 through 8 {
+      &:nth-child(#{$i}) {
+        transform: rotate(#{$i * 45}deg) translate(5rem);
+      }
+    }
+  }
+
+  &_sat {
+    animation: spin 3s linear infinite;
+
+    &_bubble {
+      width: 25px;
+      aspect-ratio: 1/1;
+      border-radius: 100%;
+      background-color: $loading-bubble-color;
+      margin-left: 5rem;
+    }
+  }
+}
+
+@keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes flashAnim {
+  100% {
+    transform: translateY(-100vh);
+  }
 }

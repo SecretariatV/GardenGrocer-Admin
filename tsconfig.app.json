@@ -24,6 +24,7 @@
     "paths": {
       "@assets/*": ["assets/*"],
       "@features/*": ["features/*"],
+      "@hooks/*": ["hooks/*"],
       "@pages/*": ["pages/*"],
       "@styles/*": ["styles/*"],
       "@utils/*": ["utils/*"]

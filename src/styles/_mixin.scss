@@ -13,3 +13,14 @@ $breakpoints: (
     @content;
   }
 }
+
+@mixin itemCenter {
+  display: grid;
+  place-items: center;
+}
+
+@mixin fullPage {
+  width: 100%;
+  min-height: 100dvh;
+  height: 100%;
+}
