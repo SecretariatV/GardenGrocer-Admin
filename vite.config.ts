@@ -20,6 +20,7 @@ export default defineConfig((config) => {
         "@features": "/src/features",
         "@pages": "/src/pages",
         "@styles": "/src/styles",
+        "@utils": "/src/utils",
       },
     },
   };
