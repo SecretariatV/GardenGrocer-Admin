@@ -1,4 +1,4 @@
-import PageRouter from "utils/routerUtils";
+import PageRouter from "@utils/routerUtils";
 
 function App() {
   return <PageRouter />;
