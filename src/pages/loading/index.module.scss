@@ -4,6 +4,7 @@
 
 .root {
   background-color: $loading-bg-color;
+  z-index: 100;
   @include fullPage;
   @include itemCenter;
   transform: translateY(0);

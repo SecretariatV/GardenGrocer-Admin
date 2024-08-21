@@ -24,3 +24,16 @@ $breakpoints: (
   min-height: 100dvh;
   height: 100%;
 }
+
+@mixin xPadding {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+@mixin headerPadding {
+  @include xPadding;
+}
+
+@mixin pagePadding {
+  @include xPadding;
+}
