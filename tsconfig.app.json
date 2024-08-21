@@ -23,6 +23,7 @@
     "baseUrl": "src",
     "paths": {
       "@assets/*": ["assets/*"],
+      "@contexts/*": ["contexts/*"],
       "@features/*": ["features/*"],
       "@hooks/*": ["hooks/*"],
       "@pages/*": ["pages/*"],
