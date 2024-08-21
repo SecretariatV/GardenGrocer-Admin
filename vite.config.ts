@@ -17,6 +17,7 @@ export default defineConfig((config) => {
     resolve: {
       alias: {
         "@assets": "/src/assets",
+        "@contexts": "/src/contexts",
         "@features": "/src/features",
         "@hooks": "/src/hooks",
         "@pages": "/src/pages",

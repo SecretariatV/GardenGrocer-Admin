@@ -3,6 +3,7 @@ import S from "./index.module.scss";
 import { Header } from "../header";
 import { Footer } from "../footer";
 import LoadingPage from "@pages/loading";
+import { HamburgerMenu } from "@features/ui";
 
 const MainLayout = () => {
   return (
@@ -13,6 +14,7 @@ const MainLayout = () => {
         <Outlet />
         <Footer />
       </div>
+      <HamburgerMenu />
     </>
   );
 };
