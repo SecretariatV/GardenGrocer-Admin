@@ -1,0 +1,14 @@
+@use "@styles/variables" as *;
+@use "@styles/mixin" as *;
+
+.root {
+  position: sticky;
+  top: 0;
+  height: 60px;
+  background-color: $primary-bg-color;
+  border-bottom: 1px solid $border-color;
+  box-shadow: 0 2px 4px $shadow-color;
+  grid-template-columns: auto 1fr;
+  @include headerPadding;
+  @include itemCenter;
+}
