@@ -1,5 +1,5 @@
 import { useApp } from "@contexts/appContext";
-import { fireEvent, render, screen } from "@testing-library/react";
+import { render, screen, fireEvent } from "@testing-library/react";
 import { HamburgerButton } from ".";
 
 vi.mock("@contexts/appContext", () => ({
