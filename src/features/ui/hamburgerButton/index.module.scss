@@ -15,11 +15,11 @@
       @for $i from 1 through 3 {
         &:nth-child(#{$i}) {
           @if $i == 1 {
-            transform: rotate(45deg) translateY(8px) translateX(5px);
+            transform: rotate(45deg) translateY(4px) translateX(4px);
           } @else if $i == 2 {
-            transform: rotate(-45deg) translateY(1px) translateX(1px);
+            transform: rotate(-45deg) translateY(0.8px) translateX(4.5px);
           } @else {
-            transform: rotate(-45deg) translateY(-2px) translateX(1px);
+            transform: rotate(-45deg) translateY(-3.2px) translateX(5px);
           }
         }
       }
@@ -37,8 +37,8 @@
       }
     }
   }
+}
 
-  input {
-    display: none;
-  }
+.hidden {
+  display: none;
 }

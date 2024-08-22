@@ -32,7 +32,7 @@ export default defineConfig((config) => {
       globals: true,
       css: true,
       environment: "happy-dom",
-      setupFiles: ["src/setupTest.ts"],
+      setupFiles: "./src/setupTest.ts",
     },
   };
 });

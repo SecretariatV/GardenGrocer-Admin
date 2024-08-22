@@ -14,46 +14,63 @@ export const HamburgerMenu = () => {
       const timer = setTimeout(() => {
         clearTimeout(timer);
         setActive(true);
+        mainRef.current?.focus();
       }, 300);
     }
-  }, [app.hamburger]);
-
-  useEffect(() => {
-    console.log("Hmaburger", app.hamburger);
-  }, [app.hamburger]);
-
-  useEffect(() => {
-    console.log("active", active);
-  }, [active]);
+  }, [app]);
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (mainRef.current && !mainRef.current.contains(event.target as Node)) {
-        setActive(false);
-        const timer = setTimeout(() => {
-          setApp((prevState) => ({ ...prevState, hamburger: false }));
-          clearTimeout(timer);
-        }, 300);
+        closeMenu();
+      }
+    };
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        closeMenu();
       }
     };
 
     if (screenRef.current) {
       screenRef.current.addEventListener("mousedown", handleClickOutside);
+      document.addEventListener("keydown", handleKeyDown);
     }
 
     return () => {
       if (screenRef.current) {
         screenRef.current.removeEventListener("mousedown", handleClickOutside);
+        document.removeEventListener("keydown", handleKeyDown);
       }
     };
   }, [screenRef]);
 
+  const closeMenu = () => {
+    setActive(false);
+    const timer = setTimeout(() => {
+      setApp((prevState) => ({ ...prevState, hamburger: false }));
+      clearTimeout(timer);
+      app.hamburgerButtonRef?.current?.focus();
+    }, 300);
+  };
+
   return (
-    <div className={clsx(S.root, app.hamburger && S.active)} ref={screenRef}>
-      <div className={clsx(S.root_wrapper, active && S.active)} ref={mainRef}>
+    <div
+      className={clsx(S.root, app.hamburger && S.active)}
+      ref={screenRef}
+      aria-hidden={!app.hamburger}
+    >
+      <div
+        className={clsx(S.root_wrapper, active && S.active)}
+        ref={mainRef}
+        role="menu"
+        aria-labelledby="hamburger-button"
+        tabIndex={-1}
+      >
         <div className={S.root_wrapper_header}>
-          <h3>Garden Grocer</h3>
+          <h3 id="hamburger-menu-title">Garden Grocer</h3>
         </div>
+        <ul></ul>
       </div>
     </div>
   );
