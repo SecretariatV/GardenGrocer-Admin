@@ -1,3 +1,5 @@
+import { RefObject } from "react";
+
 interface IRouterType {
   title: string;
   path: string;
@@ -14,6 +16,7 @@ interface INavType {
 
 interface IAppProps {
   hamburger: boolean;
+  hamburgerButtonRef: RefObject<HTMLButtonElement> | null;
 }
 
 export type { IRouterType, IAppProps, INavType };

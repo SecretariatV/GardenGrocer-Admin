@@ -8,9 +8,14 @@ interface IProps {
 
 const LoadingPage: FC<IProps> = ({ effect }) => {
   return (
-    <div className={clsx(S.root, effect && S.anim)}>
+    <div
+      className={clsx(S.root, effect && S.anim)}
+      role="alert"
+      aria-busy="true"
+      aria-live="polite"
+    >
       <div className={S.root_wrapper}>
-        <div className={S.bubbles}>
+        <div className={S.bubbles} aria-hidden="true">
           <div className={S.bubbles_bubble} />
           <div className={S.bubbles_bubble} />
           <div className={S.bubbles_bubble} />
@@ -24,6 +29,7 @@ const LoadingPage: FC<IProps> = ({ effect }) => {
           </div>
         </div>
         <span>Garden Grocer</span>
+        <p className={S.hidden}>Loading, please wait...</p>
       </div>
     </div>
   );

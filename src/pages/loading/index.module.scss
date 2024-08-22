@@ -1,6 +1,6 @@
 @use "@styles/mixin" as *;
-@use "@styles/reset" as *;
 @use "@styles/variables" as *;
+@use "@styles/reset" as *;
 
 .root {
   background-color: $loading-bg-color;
@@ -68,6 +68,10 @@
       margin-left: 5rem;
     }
   }
+}
+
+.hidden {
+  display: none;
 }
 
 @keyframes spin {

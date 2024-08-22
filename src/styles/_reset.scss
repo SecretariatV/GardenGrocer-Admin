@@ -12,6 +12,11 @@ body {
   min-height: 100vh;
 }
 
+button {
+  background-color: transparent;
+  border: 0;
+}
+
 ::-webkit-scrollbar {
   width: 8px;
 }

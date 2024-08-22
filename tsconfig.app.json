@@ -20,6 +20,7 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
 
+    "types": ["vitest/globals", "@testing-library/jest-dom"],
     "baseUrl": "src",
     "paths": {
       "@assets/*": ["assets/*"],
@@ -31,5 +32,5 @@
       "@utils/*": ["utils/*"]
     }
   },
-  "include": ["src"]
+  "include": ["src", "./setupTest.ts"]
 }
