@@ -1,0 +1,37 @@
+@use "@styles/variables" as *;
+
+.root {
+  position: relative;
+
+  label {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    transition: all ease-in-out 0.2s;
+    pointer-events: none;
+  }
+
+  input {
+    width: 100%;
+    outline: none;
+    border: 0;
+    border-bottom: 1px solid $border-color;
+    padding: 8px 8px 2px;
+    font-size: 16px;
+    background-color: #efefef;
+    transition: all ease-in-out 0.2s;
+
+    &:focus {
+      background-color: white;
+      border-bottom: 1px solid $focus-color;
+    }
+  }
+
+  &:focus-within label {
+    top: -16px;
+    font-size: 14px;
+    color: $primary-color;
+  }
+}

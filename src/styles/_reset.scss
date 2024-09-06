@@ -5,6 +5,7 @@
   margin: 0;
   outline: none;
   box-sizing: border-box;
+  font-family: "Arimo", sans-serif;
 }
 
 body {
@@ -15,6 +16,14 @@ body {
 button {
   background-color: transparent;
   border: 0;
+  cursor: pointer;
+}
+
+h2 {
+  font-size: 32px;
+  color: $primary-color;
+  text-shadow: 1px 1px 0 white, 0 1px 1px $focus-color;
+  text-align: center;
 }
 
 ::-webkit-scrollbar {

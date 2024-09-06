@@ -1,4 +1,5 @@
 @use "@styles/variables" as *;
+@use "@styles/mixin" as *;
 
 .root {
   height: 20px;
@@ -9,6 +10,10 @@
   padding: 2px 0;
   cursor: pointer;
   filter: drop-shadow(0 1px 0.4px #748d74);
+
+  @include breakpoint("lg") {
+    display: none;
+  }
 
   &:has(input[id="hamburger"]:checked) {
     .line {
