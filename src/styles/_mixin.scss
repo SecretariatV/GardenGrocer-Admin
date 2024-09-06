@@ -37,3 +37,8 @@ $breakpoints: (
 @mixin pagePadding {
   @include xPadding;
 }
+
+@mixin flexCol {
+  display: flex;
+  flex-direction: column;
+}
