@@ -1,0 +1,26 @@
+@use "@styles/variables" as *;
+@use "@styles/mixin" as *;
+
+.root {
+  width: 100%;
+  height: calc(100dvh - 60px);
+  background-color: $secondary-bg-color;
+  @include itemCenter;
+}
+
+.wrapper {
+  background-color: white;
+  border-radius: 12px;
+  border: 1px solid #eee;
+  padding: 24px;
+  gap: 2rem;
+  @include flexCol;
+
+  button {
+    background-color: $primary-bg-color;
+    padding: 12px;
+    border-radius: 6px;
+    font-size: 16px;
+    color: white;
+  }
+}
