@@ -4,6 +4,7 @@ import { INavType, IRouterType } from "./typeUtils";
 const LazyMainLayout = lazy(() => import("@features/layout/mainLayout"));
 const LazyLeaderboard = lazy(() => import("@pages/leaderboard"));
 const LazyRegister = lazy(() => import("@pages/register"));
+const LazyConfirm = lazy(() => import("@pages/confirm"));
 
 const ROUTER_DATA: IRouterType[] = [
   {
@@ -13,6 +14,7 @@ const ROUTER_DATA: IRouterType[] = [
     children: [
       { title: "Dashboard", path: "", element: <LazyLeaderboard /> },
       { title: "Register", path: "register", element: <LazyRegister /> },
+      { title: "Confirm", path: "confirm", element: <LazyConfirm /> },
     ],
   },
 ];

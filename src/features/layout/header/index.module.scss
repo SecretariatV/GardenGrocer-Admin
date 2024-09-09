@@ -9,6 +9,7 @@
   border-bottom: 1px solid $border-color;
   box-shadow: 0 2px 4px $shadow-color;
   grid-template-columns: auto 1fr;
+  z-index: 50;
   @include headerPadding;
   @include itemCenter;
 }
